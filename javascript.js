@@ -17,8 +17,6 @@ function getComputerChoice() {
     return "paper";
 }
 
-console.log(getComputerChoice())
-
 
 // Step 3
 /*
@@ -32,10 +30,52 @@ function getHumanChoice() {
     return choice;
 }
 
-console.log(getHumanChoice())
 
 // Step 4
 //Create score for computer and human
 
 let humanScore = 0;
 let computerScore = 0;
+
+// Step 5
+/*
+Algorithm for function playRound
+Take to parameters humanChoice and computerChoice
+Correct case sensitivity by turning first letter to uppercase, rest to lowercase
+IF humanChoice beats computerChoice meaning:
+    humanChoice = paper and computerChoice = rock
+    humanChoice = rock and computerChoice = scissors
+    humanChoice = scissors and computerChoice = paper
+    return win message
+Or opposite
+IF both have same then to nothing
+*/
+
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice[0].toUpperCase() + humanChoice.slice(1).toLowerCase();
+    computerChoice = computerChoice[0].toUpperCase() + computerChoice.slice(1).toLowerCase();
+
+    if (humanChoice === computerChoice) {
+        console.log("It's a tie!")
+        return;
+    }
+
+    humanWon = (humanChoice === "Paper" && computerChoice == "Rock" ||
+        humanChoice === "Rock" && computerChoice === "Scissors" ||
+        humanChoice === "Scissors" && computerChoice === "Paper")
+
+    if (humanWon) {
+        humanScore++;
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        return;
+    } else {
+        computerScore++;
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        return;
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
