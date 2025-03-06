@@ -1,4 +1,4 @@
-//Step 2
+// Step 2
 /* 
 Algorithm for function getComputerChoice
 Create variable x which stores random number between 0 and 1
@@ -8,7 +8,7 @@ IF x is larger than 2/3: return "scissors"
 */
 
 function getComputerChoice() {
-    let x = Math.random();
+    const x = Math.random();
     if (x <= 1/3) {
         return "rock";
     } else if (x > 2/3) {
@@ -18,3 +18,18 @@ function getComputerChoice() {
 }
 
 console.log(getComputerChoice())
+
+
+// Step 3
+/*
+Algorithm for function getComputerChoice
+Store user input in variable "choice"
+Return "choice"
+*/
+
+function getHumanChoice() {
+    const choice = prompt('Enter "rock", "paper" or "scissors.');
+    return choice;
+}
+
+console.log(getHumanChoice())
