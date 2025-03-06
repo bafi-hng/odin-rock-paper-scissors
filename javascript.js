@@ -33,3 +33,9 @@ function getHumanChoice() {
 }
 
 console.log(getHumanChoice())
+
+// Step 4
+//Create score for computer and human
+
+let humanScore = 0;
+let computerScore = 0;
