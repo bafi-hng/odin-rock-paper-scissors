@@ -61,6 +61,7 @@ player.textContent = humanScore.toString();
 const computer = document.querySelector("#computer-score");
 computer.textContent = computerScore.toString();
 
+const announcement = document.createElement("h2");
 
 
 function playRound(humanChoice, computerChoice) {
@@ -87,18 +88,25 @@ function playRound(humanChoice, computerChoice) {
 
     player.textContent = humanScore.toString();
     computer.textContent = computerScore.toString();
+
+    if (humanScore >= 5) {
+        announcement.textContent = "YOU WON!";
+    } else if (computerScore >= 5) {
+        announcement.textContent = "YOU LOST!";
+    }
+
+    body.appendChild(announcement);
     return;
 
 }
 
 
-
-
 const buttons = document.querySelectorAll("button");
-
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         playRound(button.id, getComputerChoice());
     });
 });
+
+
 
