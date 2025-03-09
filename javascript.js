@@ -62,7 +62,7 @@ function playRound(humanChoice, computerChoice) {
 
 
     if (humanChoice === computerChoice) {
-        div.textContent = "It's a tie!";
+        div.textContent = `Your both chose: ${humanChoice}. It's a tie!`;
         return;
     }
 
@@ -72,11 +72,11 @@ function playRound(humanChoice, computerChoice) {
 
     if (humanWon) {
         humanScore++;
-        div.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+        div.textContent = `You chose: ${humanChoice}. The computer chose: ${computerChoice}. You win!`;
         return;
     } else {
         computerScore++;
-        div.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+        div.textContent = `You chose: ${humanChoice}. The computer chose: ${computerChoice}. You lose!`;
         return;
     }
 
