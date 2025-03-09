@@ -51,9 +51,16 @@ Or opposite
 IF both have same then to nothing
 */
 
-const body = document.querySelector("body")
+const body = document.querySelector("body");
 
-const div = document.querySelector("#result")
+const div = document.querySelector("#result");
+
+const player = document.querySelector("#player-score");
+player.textContent = humanScore.toString();
+
+const computer = document.querySelector("#computer-score");
+computer.textContent = computerScore.toString();
+
 
 
 function playRound(humanChoice, computerChoice) {
@@ -73,12 +80,14 @@ function playRound(humanChoice, computerChoice) {
     if (humanWon) {
         humanScore++;
         div.textContent = `You chose: ${humanChoice}. The computer chose: ${computerChoice}. You win!`;
-        return;
     } else {
         computerScore++;
         div.textContent = `You chose: ${humanChoice}. The computer chose: ${computerChoice}. You lose!`;
-        return;
     }
+
+    player.textContent = humanScore.toString();
+    computer.textContent = computerScore.toString();
+    return;
 
 }
 
